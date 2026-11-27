@@ -1,14 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Shell
-    x:Class="board_game_library.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:board_game_library"
-    Title="board_game_library">
+    xmlns:views="clr-namespace:board_game_library.Views"
+    x:Class="board_game_library.AppShell"
+    Title="Wypożyczalnia gier planszowych"
+    FlyoutBehavior="Locked">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20" Spacing="8">
+            <Label
+                Text="Board Game Library"
+                FontSize="24"
+                FontAttributes="Bold" />
+
+            <Label Text="Wypożyczalnia gier planszowych" />
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Strona główna">
+        <ShellContent
+            Route="Home"
+            ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Kategorie">
+        <ShellContent
+            Route="Categories"
+            ContentTemplate="{DataTemplate views:CategoriesView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Wydawcy">
+        <ShellContent
+        Route="Publishers"
+        ContentTemplate="{DataTemplate views:PublishersView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Klienci">
+        <ShellContent
+        Route="Customers"
+        ContentTemplate="{DataTemplate views:CustomerView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pracownicy">
+        <ShellContent
+        Route="Employees"
+        ContentTemplate="{DataTemplate views:EmployeesView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Gry">
+        <ShellContent
+        Route="Games"
+        ContentTemplate="{DataTemplate views:GamesView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Egzemplarze">
+        <ShellContent
+        Route="GameCopies"
+        ContentTemplate="{DataTemplate views:GameCopiesView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Wypożyczenia">
+        <ShellContent
+        Route="Rentals"
+        ContentTemplate="{DataTemplate views:RentalsView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pozycje wypożyczeń">
+        <ShellContent
+        Route="RentalItems"
+        ContentTemplate="{DataTemplate views:RentalItemsView}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Płatności">
+        <ShellContent
+        Route="Payments"
+        ContentTemplate="{DataTemplate views:PaymentsView}" />
+    </FlyoutItem>
 
 </Shell>
